@@ -1,18 +1,5 @@
 import { useEffect, useState} from 'react'
 import './App.css'
-import express from 'express';
-import cors from 'cors';
-
-const app =express();
-const corsOptions: cors.CorsOptions = {
-  origin: [
-    "*",
-  ],
-  methods: ["GET", "POST", "PUT", "DELETE"], // İzin verilen HTTP metodları
-  credentials: true, // Cookie/OTurum desteği
-  allowedHeaders: ["Content-Type", "Authorization"] // İzin verilen başlıklar
-};
-app.use(cors(corsOptions));
 
 
 interface Product {
@@ -32,7 +19,7 @@ function App() {
   useEffect(() => {
     const fetchProd = async() => {
         
-          const fetchData = await fetch('/api/productlist',{
+          const fetchData = await fetch('/api/prod/productlist',{
             method:'GET',
             headers:{
               "Content-Type":"application/json",
