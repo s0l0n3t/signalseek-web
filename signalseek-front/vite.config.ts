@@ -3,8 +3,8 @@ import react from '@vitejs/plugin-react-swc'
 import tailwindcss from '@tailwindcss/vite'
 
 export default defineConfig({
-  plugins: [react(),tailwindcss()],
   server: {
+    cors: false,
     proxy: {
       '/api': {
         target: 'http://54.226.173.145:8180',
@@ -13,5 +13,7 @@ export default defineConfig({
         rewrite: (path) => path.replace(/^\/api/, '')
       }
     }
-  }
+  },
+  plugins: [react(),tailwindcss()],
+  
 })
