@@ -20,14 +20,20 @@ function App() {
 
   useEffect(() => {
     const fetchProd = async() => {
-        const fetchData = await fetch('api/prod/productlist',{
-          method:'GET',
-          headers:{
-            "Content-Type":"application/json"
-          }
-        })
-        const jsonProd = await fetchData.json() as Product[]
-        setProducts(jsonProd);
+        try{
+          const fetchData = await fetch('api/prod/productlist',{
+            method:'GET',
+            headers:{
+              "Content-Type":"application/json",
+              'Accept': 'application/json'
+            },
+            
+          })
+          const jsonProd = await fetchData.json() as Product[]
+          setProducts(jsonProd);
+        }catch(error){
+          console.error(error)
+        }
       }
       fetchProd()
   },[data])
