@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "proxy":"https://signalseek.xyz:8180",
+  "proxy": "http://signalseek.xyz:8180",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
