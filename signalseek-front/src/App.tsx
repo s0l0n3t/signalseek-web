@@ -20,7 +20,7 @@ function App() {
 
   useEffect(() => {
     const fetchProd = async() => {
-        const fetchData = await fetch('http://54.226.173.145:8180/prod/productlist',{
+        const fetchData = await fetch('api/prod/productlist',{
           method:'GET',
           headers:{
             "Content-Type":"application/json"
