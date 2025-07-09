@@ -17,7 +17,6 @@ interface Product {
 
 function App() {
   const[data, setProducts] = useState<Product[]>([]);
-
   useEffect(() => {
     const fetchProd = async() => {
         
