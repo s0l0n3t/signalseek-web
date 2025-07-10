@@ -19,7 +19,7 @@ function App() {
   useEffect(() => {
     const fetchProd = async() => {
         
-          const fetchData = await fetch('/api/prod/productlist',{
+          const fetchData = await fetch(`${process.env.REACT_APP_API_URL}/api/prod/productlist`,{
             method:'GET',
             headers:{
               "Content-Type":"application/json",
