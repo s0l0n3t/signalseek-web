@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "proxy": "http://signalseek.xyz:8180",
+  "proxy": "https://renart-backend-gpzb.onrender.com",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",

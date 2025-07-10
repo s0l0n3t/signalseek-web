@@ -14,12 +14,12 @@ interface Product {
 }
 
 function App() {
+  const url = "https://renart-backend-gpzb.onrender.com/prod/productlist";
   const[data, setProducts] = useState<Product[]>([]);
-  
   useEffect(() => {
     const fetchProd = async() => {
         
-          const fetchData = await fetch(`/prod/productlist`,{
+          const fetchData = await fetch(`${url}/prod/productlist`,{
             method:'GET',
             headers:{
               "Content-Type":"application/json",
