@@ -4,23 +4,8 @@ import tailwindcss from '@tailwindcss/vite'
 
 export default defineConfig({
   server: {
-    proxy: {
-      '/api': {
-        target: 'https://renart-backend-gpzb.onrender.com',
-        changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/api/, ''),
-        configure: (proxy) => {
-          proxy.on('error', (err) => {
-            console.error('[PROXY ERROR]', err)
-          })
-          proxy.on('proxyReq', (req) => {
-            console.log(`[PROXY] ${req.method} ${req.path}`)
-          })
-          proxy.on('proxyRes', (proxyRes) => {
-            proxyRes.headers['Access-Control-Allow-Origin'] = '*'
-          })
-        },
-      }
+    cors: {
+        origin: 'https://renart-backend-gpzb.onrender.com'
     }
   },
   plugins: [react(), tailwindcss()],

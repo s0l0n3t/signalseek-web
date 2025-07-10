@@ -15,10 +15,11 @@ interface Product {
 
 function App() {
   const[data, setProducts] = useState<Product[]>([]);
+  console.log();
   useEffect(() => {
     const fetchProd = async() => {
         
-          const fetchData = await fetch(`${import.meta.env.REACT_APP_API_URL}/prod/productlist`,{
+          const fetchData = await fetch(`${import.meta.env.VITE_REACT_API_URL}/prod/productlist`,{
             method:'GET',
             headers:{
               "Content-Type":"application/json",
