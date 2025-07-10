@@ -20,9 +20,6 @@ export default defineConfig({
             proxyRes.headers['Access-Control-Allow-Origin'] = '*'
           })
         },
-        headers: {
-          'X-Forwarded-For': '127.0.0.1',
-        }
       }
     }
   },

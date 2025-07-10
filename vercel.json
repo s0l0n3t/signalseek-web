@@ -2,7 +2,11 @@
   "rewrites": [
     {
       "source": "/api/(.*)",
-      "destination": "https://renart-backend-gpzb.onrender.com/:8180/prod/$1"
+      "destination": "https://renart-backend-gpzb.onrender.com/api/$1"
+    },
+    {
+      "source": "/prod/(.*)",
+      "destination": "https://renart-backend-gpzb.onrender.com/prod/$1"
     }
   ],
   "headers": [
@@ -11,5 +15,12 @@
       "headers": [
         { "key": "Access-Control-Allow-Origin", "value": "*" }
       ]
+    },
+    {
+      "source": "/prod/(.*)",
+      "headers": [
+        { "key": "Access-Control-Allow-Origin", "value": "*" }
+      ]
     }
   ]
+}
